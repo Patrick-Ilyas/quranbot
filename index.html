@@ -29,12 +29,24 @@
     </style>
 </head>
 <body>
-    <!-- Chatbot-Container, in dem der LLM laufen wird -->
-    <div id="chatbot-container">
-        <!-- Hier kannst du dein Chatbot-Skript oder Iframe einfügen -->
-    </div>
+    <!-- Chatbot-Container -->
+    <div id="chatbot-container"></div> <!-- Container für den Chatbot -->
 
-    <!-- Chatbot-Script einfügen (dies ist ein Platzhalter) -->
-    <script src="path/to/your-chatbot.js"></script>
+    <!-- Voiceflow Script -->
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '6722ae6128118f2b410c8bf3' }, // Deine Projekt-ID
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production'
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+          v.type = "text/javascript"; 
+          s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
 </body>
 </html>
